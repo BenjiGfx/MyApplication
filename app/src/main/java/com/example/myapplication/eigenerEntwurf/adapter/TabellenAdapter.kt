@@ -39,9 +39,6 @@ class TabellenAdapter(
         holder.binding.differenz.text = item.goalDiff.toString()
         holder.binding.punkte.text = item.points.toString()
 
-        holder.binding.root.setOnClickListener {
-
-        }
 
     }
 

@@ -9,12 +9,13 @@
         android:id="@+id/tv_spielplan"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#FB0000"
+        android:background="#00E2FF"
         android:text="Tabelle"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview_tabelle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,20 +25,23 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/list_item_tabelle"
         app:layout_constraintBottom_toTopOf="@+id/button_spielplan"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_spielplan" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_spielplan"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/list_item_tabelle" />
 
     <Button
         android:id="@+id/button_spielplan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FF0000"
+        android:backgroundTint="#00E2FF"
         android:text="zum Spielplan"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_tabelle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
