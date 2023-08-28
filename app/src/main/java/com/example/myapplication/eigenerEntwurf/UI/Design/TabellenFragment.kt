@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.eigenerEntwurf.adapter.TabellenAdapter
 import com.example.myapplication.eigenerEntwurf.databinding.FragmentTabelleSpielplanBinding
@@ -39,6 +40,11 @@ class TabellenFragment : Fragment() {
         viewModel.team.observe(viewLifecycleOwner) {
             Log.d(TAG,"$it")
             binding.recyclerviewTabelle.adapter = TabellenAdapter(it)
+
+            binding.buttonSpielplan.setOnClickListener {
+                val navController = findNavController()
+                navController.navigate(TabellenFragmentDirections.actionTabellenFragmentToSpielplanFragment())
+            }
         }
     }
 }

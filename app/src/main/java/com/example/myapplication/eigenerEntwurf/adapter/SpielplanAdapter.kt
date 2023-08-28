@@ -2,7 +2,10 @@ package com.example.myapplication.eigenerEntwurf.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.eigenerEntwurf.UI.Design.SpielplanFragment
+import com.example.myapplication.eigenerEntwurf.UI.Design.SpielplanFragmentDirections
 import com.example.myapplication.eigenerEntwurf.databinding.ListItemSpielplanBinding
 import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpTeam
 
@@ -25,6 +28,11 @@ class SpielplanAdapter (
         holder.binding.scoreTeam1.text = item.teamName
         holder.binding.scoreTeam1.text = item.pointsTeam1.toString()
         holder.binding.scoreTeam2.text = item.pointsTeam2.toString()
+
+        holder.itemView.setOnClickListener {
+            val navController = holder.itemView.findNavController()
+            navController.navigate(SpielplanFragmentDirections.actionSpielplanFragmentToTabellenFragment())
+        }
     }
 
     override fun getItemCount(): Int {

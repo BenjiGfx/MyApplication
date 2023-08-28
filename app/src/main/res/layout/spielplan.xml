@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/back_to_tabelle_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#00E2FF"
@@ -38,7 +38,7 @@
         android:id="@+id/recyclerView_spielplan"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/back_to_tabelle_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spielplan_headline" />

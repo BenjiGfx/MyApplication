@@ -3,8 +3,10 @@ package com.example.myapplication.eigenerEntwurf.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.myapplication.eigenerEntwurf.UI.Design.TabellenFragmentDirections
 import com.example.myapplication.eigenerEntwurf.databinding.ListItemTabelleBinding
 import com.example.myapplication.eigenerEntwurf.model.Team
 import com.example.myapplication.eigenerEntwurf.remote.TAG
@@ -38,6 +40,10 @@ class TabellenAdapter(
         holder.binding.tore.text = item.goals.toString()
         holder.binding.differenz.text = item.goalDiff.toString()
         holder.binding.punkte.text = item.points.toString()
+        holder.itemView.setOnClickListener {
+            val navController = holder.itemView.findNavController()
+            navController.navigate(TabellenFragmentDirections.actionTabellenFragmentToSpielplanFragment())
+        }
 
 
     }
