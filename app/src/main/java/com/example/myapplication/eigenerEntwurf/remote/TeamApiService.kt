@@ -21,7 +21,7 @@ private val retrofit = Retrofit.Builder()
 
 interface TeamApiService {
 
-    @GET("getbltable/bl1/2023")
+    @GET("getbltable/bl1/2022")
     suspend fun getTeam(): List<Team>
 }
 
