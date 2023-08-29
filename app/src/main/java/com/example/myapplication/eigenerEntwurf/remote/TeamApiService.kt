@@ -2,6 +2,7 @@ package com.example.myapplication.eigenerEntwurf.remote
 
 import com.example.myapplication.eigenerEntwurf.model.Data
 import com.example.myapplication.eigenerEntwurf.model.Team
+import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpData
 import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpTeam
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -22,10 +23,12 @@ private val retrofit = Retrofit.Builder()
 
 interface TeamApiService {
 
-    @GET("getbltable/bl1/2022")
+    @GET("getbltable/bl1/2023")
     suspend fun getTeam(): List<Team>
-    @GET("getmatchdata/bl1/2022")
-    fun getSpTeam(): List<SpTeam>
+
+    @GET("getmatchdata/bl1/2023")
+    fun getSpData(): List<SpData>
+
 
 
 }

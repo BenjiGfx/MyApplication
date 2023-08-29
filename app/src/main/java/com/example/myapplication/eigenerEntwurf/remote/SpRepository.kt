@@ -10,18 +10,18 @@ import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpTeam
 
 const val SpTAG = "SpRepositoryTAG"
 
-class SpRepository(val SpteamApi: SpTeamApi) {
+class SpRepository(val SpteamApi: TeamApi) {
 
-    private val _currentspteams = MutableLiveData<List<SpTeam>>()
-    val spteams: LiveData<List<SpTeam>>
-        get() = _currentspteams
+    private val _currentspdata = MutableLiveData<List<SpData>>()
+    val spdata: LiveData<List<SpData>>
+        get() = _currentspdata
 
 
-    suspend fun getSpTeams() {
+    suspend fun getSpData() {
 
         try {
-            val newSpTeam = SpteamApi.spapiService.getSpTeam()
-            _currentspteams.postValue(newSpTeam)
+            val newSpTeam = SpteamApi.apiService.getSpData()
+            _currentspdata.postValue(newSpTeam)
         } catch (e: Exception) {
             Log.e(SpTAG, "Error loading Data from API: $e")
         }

@@ -3,15 +3,15 @@ package com.example.myapplication.eigenerEntwurf.UI.Design
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.eigenerEntwurf.remote.SpRepository
-import com.example.myapplication.eigenerEntwurf.remote.SpTeamApi
+import com.example.myapplication.eigenerEntwurf.remote.TeamApi
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SpielplanViewModel : ViewModel() {
 
-    val sprepository = SpRepository(SpTeamApi)
-    val spteam = sprepository.spteams // teams ist die constante im Repository.
+    val sprepository = SpRepository(TeamApi)
+    val spteam = sprepository.spdata // teams ist die constante im Repository.
 
     init {
         loadTeam()
@@ -20,7 +20,7 @@ class SpielplanViewModel : ViewModel() {
     fun loadTeam() {
 
         viewModelScope.launch(Dispatchers.IO) {
-            sprepository.getSpTeams()
+            sprepository.getSpData()
         }
     }
 }

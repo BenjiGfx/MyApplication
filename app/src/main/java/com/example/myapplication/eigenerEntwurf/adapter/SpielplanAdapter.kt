@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.eigenerEntwurf.UI.Design.SpielplanFragment
 import com.example.myapplication.eigenerEntwurf.UI.Design.SpielplanFragmentDirections
 import com.example.myapplication.eigenerEntwurf.databinding.ListItemSpielplanBinding
+import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpData
 import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpTeam
 
 class SpielplanAdapter (
-    private val dataset: List<SpTeam>
+    private val dataset: List<SpData>
 ) : RecyclerView.Adapter<SpielplanAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: ListItemSpielplanBinding) : RecyclerView.ViewHolder(binding.root)
@@ -24,10 +25,11 @@ class SpielplanAdapter (
 
         val item = dataset[position]
 
-        holder.binding.team1.text = item.teamName
-        holder.binding.scoreTeam1.text = item.teamName
-        holder.binding.scoreTeam1.text = item.pointsTeam1.toString()
-        holder.binding.scoreTeam2.text = item.pointsTeam2.toString()
+       /* holder.binding.team1.text = item.team1.teamName
+        holder.binding.team2.text = item.team2.teamName
+        holder.binding.scoreTeam1.text = item.matchResults[1].pointsTeam1.toString()
+        holder.binding.scoreTeam2.text = item.matchResults[1].pointsTeam2.toString()*/
+
 
         holder.itemView.setOnClickListener {
             val navController = holder.itemView.findNavController()
