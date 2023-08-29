@@ -41,5 +41,6 @@
         app:layout_constraintBottom_toTopOf="@+id/back_to_tabelle_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/spielplan_headline" />
 </androidx.constraintlayout.widget.ConstraintLayout>

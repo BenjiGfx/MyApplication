@@ -1,5 +1,6 @@
 package com.example.myapplication.eigenerEntwurf.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -9,6 +10,7 @@ import com.example.myapplication.eigenerEntwurf.UI.Design.SpielplanFragmentDirec
 import com.example.myapplication.eigenerEntwurf.databinding.ListItemSpielplanBinding
 import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpData
 import com.example.myapplication.eigenerEntwurf.model.spielplandaten.SpTeam
+import com.example.myapplication.eigenerEntwurf.remote.TAG
 
 class SpielplanAdapter (
     private val dataset: List<SpData>
@@ -25,10 +27,17 @@ class SpielplanAdapter (
 
         val item = dataset[position]
 
-       /* holder.binding.team1.text = item.team1.teamName
+        holder.binding.team1.text = item.team1.teamName
         holder.binding.team2.text = item.team2.teamName
-        holder.binding.scoreTeam1.text = item.matchResults[1].pointsTeam1.toString()
-        holder.binding.scoreTeam2.text = item.matchResults[1].pointsTeam2.toString()*/
+
+        if (item.matchResults.size != 0) {
+
+            holder.binding.scoreTeam1.text = item.matchResults[1].pointsTeam1.toString()
+            holder.binding.scoreTeam2.text = item.matchResults[1].pointsTeam2.toString()
+        } else {
+            holder.binding.scoreTeam1.text = "/"
+            holder.binding.scoreTeam2.text = "/"
+        }
 
 
         holder.itemView.setOnClickListener {

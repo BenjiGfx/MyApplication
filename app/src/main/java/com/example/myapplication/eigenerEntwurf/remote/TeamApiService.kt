@@ -27,7 +27,7 @@ interface TeamApiService {
     suspend fun getTeam(): List<Team>
 
     @GET("getmatchdata/bl1/2023")
-    fun getSpData(): List<SpData>
+    suspend fun getSpData(): List<SpData>
 
 
 
